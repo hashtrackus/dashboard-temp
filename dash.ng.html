@@ -1,9 +1,29 @@
 <div>
-  <header>
-    <h1>Todo List</h1>
-  </header>
-
-  <ul ng-repeat="tweet in tweets">
-    <li>{{tweet}}</li>
-  </ul>
+  <!-- <div class="sidebar hide-on-small">
+    Sidebar
+  </div> -->
+  <div class="row">
+    <div class="col s12 m5 l5">
+      <div class="card blue-grey darken-1 z-depth-2">
+        <div class="card-content white-text">
+          <span class="card-title">Results</span>
+          <p>
+            Total Tweets: {{tweets.length}} <br/>
+            Unique Tweeters: (Filter)
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m7 l7">
+      <ul class="collection z-depth-2">
+        <li ng-repeat="tweet in tweets" class="collection-item avatar">
+          <img ng-src="{{tweet.user.profile_image_url}}" alt="" class="circle">
+            <span class="title">{{tweet.user.name}}</span>
+          <p>@{{tweet.user.screen_name}} <br>
+             Retweet count: {{tweet.retweet_count}} | Favorites: {{tweet.favorite_count}}
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
