@@ -4,11 +4,15 @@
 
 <body>
   <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
+  <ul>
+    {{#each tweets}}
+      {{> tweet}}
+    {{/each}}
+  </ul>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="tweet">
+  <li>
+    <span class="text">{{created_at}}</span>
+  </li>
 </template>
